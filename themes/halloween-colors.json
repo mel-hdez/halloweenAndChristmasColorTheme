@@ -1,0 +1,127 @@
+{
+  
+    "workbench.colorCustomizations": 
+      {
+        "editorCursor.foreground": "#1CFEBA",  
+        "editorLineNumber.foreground": "#1CFEBA",
+        "editor.selectionBackground": "#ccffcc"
+      },
+  "tokenColors": [
+    {
+      "scope": "comment",
+      "settings": {
+        "foreground": "#ff8257",
+        "fontStyle": "normal"
+      }
+    },
+    {
+      "scope": "keyword", 
+      "settings": {
+        "foreground": "#1CFEBA"
+      }
+    },
+    {
+      "scope": "punctuation.definition.tag",
+      "settings": {
+        "foreground": "#B8CDF8"
+      }
+    },
+    {
+      "scope": "punctuation.definition.block",
+      "settings": {
+        "foreground": "#9D8DF1"
+      }
+    },
+    {
+      "scope": "punctuation.definition.block.begin",
+      "settings": {
+        "foreground": "#3B0086"
+      }
+    },
+    {
+      "scope": "punctuation.definition.block.end",
+      "settings": {
+        "foreground": "#6200B3"
+      }
+    },
+    {
+      "scope": "punctuation.definition.parameters.begin",
+      "settings": {
+        "foreground": "#B43E8F"
+      }
+    },
+    {
+      "scope": "punctuation.definition.parameters.end",
+      "settings": {
+        "foreground": "#EA7AF4"
+      }
+    },
+    {
+      "scope": "punctuation.definition.array.begin",
+      "settings": {
+        "foreground": "#E88EED"
+      }
+    },
+    {
+      "scope": "punctuation.definition.array.end",
+      "settings": {
+        "foreground": "#F1B5CB"
+      }
+    },
+    {
+      "scope": "punctuation.section.block.begin",
+      "settings": {
+        "foreground": "#F4C3C2"
+      }
+    },
+    {
+      "scope": "punctuation.section.block.end",
+      "settings": {
+        "foreground": "#F3DAD8"
+      }
+    },
+    {
+      "scope": "string",
+      "settings": {
+        "foreground": "#99E1D9"
+      }
+    },
+    {
+      "scope": "entity.name.function",
+      "settings": {
+        "foreground": "#9381FF"
+      }
+    },
+    {
+      "scope": "entity.name.type.class",
+      "settings": {
+        "foreground": "#FE5D9F"
+      }
+    },
+    {
+      "scope": "meta.method",
+      "settings": {
+        "foreground": "#D62828", 
+        "fontStyle": "italic"    
+      }
+    },
+    {
+      "scope": "variable",
+      "settings": {
+        "foreground": "#AD7A99"  
+      }
+    },
+    {
+      "scope": "constant",
+      "settings": {
+        "foreground": "#FCBF49"  
+      }
+    },
+    {
+      "scope": "keyword.operator",
+      "settings": {
+        "foreground": "#8B95C9"
+      }
+    }
+  ]
+}

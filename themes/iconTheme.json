@@ -1,0 +1,13 @@
+{
+    "iconDefinitions": {
+      "_folder": {
+        "iconPath": "./icons/folder-icon.svg"
+      }
+    },
+    "folder": "_folder",
+    "folderNames": {
+      "src": "_folder",
+      "tests": "./icons/test-folder-icon.svg"
+    }
+  }
+  
