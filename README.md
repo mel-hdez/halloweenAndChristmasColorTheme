@@ -1,12 +1,54 @@
-# Extensión con Tipografía Space Mono
+# 🎨 Festive Theme Switcher for VS Code
 
-Esta extensión cambia la fuente del editor de Visual Studio Code a **Space Mono**, una fuente de Google Fonts.
+**Festive Theme Switcher** is a Visual Studio Code extension that brings seasonal themes and decorations to your coding experience. Based on the current month, this extension will automatically set custom colors and icons, celebrating Halloween and Christmas while adding a touch of festive spirit to your editor!
 
-## Instrucciones para instalar Space Mono
+## ✨ Features
 
-1. Descarga la fuente desde [Google Fonts: Space Mono](https://fonts.google.com/specimen/Space+Mono).
-2. Instálala en tu sistema operativo:
-   - **Windows**: Haz clic derecho en el archivo descargado y selecciona "Instalar".
-   - **macOS**: Haz doble clic en el archivo y selecciona "Instalar".
-   - **Linux**: Copia los archivos de la fuente a tu carpeta de fuentes (`/usr/share/fonts` o `~/.fonts`).
-3. Reinicia Visual Studio Code para aplicar los cambios.
+1. **Dynamic Seasonal Themes**
+   - 🎃 **October:** Halloween theme with spooky decorations and colors.
+   - 🎄 **December:** Holiday theme with a warm, festive color palette.
+2. **Automatic Font Setting**
+
+   - Sets the **editor font** to "Space Mono" for a stylish and modern look.
+
+3. **Comment Decorations**: The extension adds relevant icons next to comments, adjusting for Halloween and Christmas.
+
+## 📸 Screenshots
+
+### Halloween Theme
+
+![Halloween Theme Screenshot](./src/img/halloweenTheme.png) <!-- Replace with actual image link -->
+
+### Christmas Theme
+
+![Christmas Theme Screenshot](./src/img/holidayTheme.png) <!-- Replace with actual image link -->
+
+### Christmas Theme
+
+![Christmas Theme Screenshot](./src//img/defaultTheme.png) <!-- Replace with actual image link -->
+
+## 🚀 Getting Started
+
+1. **Install** the extension from the Visual Studio Code Marketplace.
+2. **Activate** the extension by opening a file in your editor.
+3. **Enjoy** the changing themes as the months go by!
+
+> **Note**: The extension automatically detects the month, so you can enjoy seasonal decorations without manual intervention.
+
+## 🛠️ Configuration
+
+- **Custom Themes**: If you'd like to tweak the colors, you can edit the JSON files under `themes/` folder, which contain the color schemes for each month.
+
+## 🔄 Supported Events
+
+- **October (Halloween)**: 🎃 decorations, colors, and spooky vibes!
+- **December (Christmas)**: 🎄 colors, icons, and holiday warmth.
+
+## 🎉 Example Usage
+
+```typescript
+// This comment will display a 🎃 or 🎄 icon based on the current month.
+function spookyFunction() {
+  console.log("This is Halloween!");
+}
+```
