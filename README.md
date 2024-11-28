@@ -15,17 +15,17 @@
 
 ## 📸 Screenshots
 
-### Halloween Theme
+### Halloween Theme 🎃
 
-![Halloween Theme Screenshot](./src/img/halloweenTheme.png) <!-- Replace with actual image link -->
+![Halloween Theme Screenshot](./src/img/halloweenTheme.png)
 
-### Christmas Theme
+### Christmas Theme 🎄
 
-![Christmas Theme Screenshot](./src/img/holidayTheme.png) <!-- Replace with actual image link -->
+![Christmas Theme Screenshot](./src/img/holidayTheme.png)
 
-### Christmas Theme
+### Default Theme 🌷
 
-![Christmas Theme Screenshot](./src//img/defaultTheme.png) <!-- Replace with actual image link -->
+![Christmas Theme Screenshot](./src/img/defaultTheme.png)
 
 ## 🚀 Getting Started
 

@@ -3,7 +3,7 @@
   "displayName": "Halloween and Christmas Color Theme",
   "description": "colors for halloween and christmas",
   "version": "0.0.1",
-  "publisher": "Christmasbonus", 
+  "publisher": "Christmasbonus",
   "engines": {
     "vscode": "^1.94.0"
   },
@@ -11,10 +11,14 @@
     "Other"
   ],
   "activationEvents": [
-      "onDidChangeActiveTextEditor",
-      "onStartupFinished"
-    ],
+    "onDidChangeActiveTextEditor",
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/usuario/repo"
+  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",

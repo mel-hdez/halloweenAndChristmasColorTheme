@@ -2,11 +2,23 @@ import * as vscode from 'vscode';
 import * as path from 'path';
 import * as fs from 'fs';
 
+let originalColorCustomizations: any;
+let originalTokenColorCustomizations: any;
+let originalFontFamily: any;
+
 function getCurrentMonth() {
     const date = new Date();
     return date.getMonth();
 }
 
+function saveOriginalConfigurations() {
+    const workbenchConfig = vscode.workspace.getConfiguration('workbench');
+    const editorConfig = vscode.workspace.getConfiguration('editor');
+
+    originalColorCustomizations = workbenchConfig.get('colorCustomizations');
+    originalTokenColorCustomizations = editorConfig.get('tokenColorCustomizations');
+    originalFontFamily = editorConfig.get('fontFamily');
+}
 function loadColorsFromFile(context: vscode.ExtensionContext, fileName: string) {
     try {
         const filePath = path.join(context.extensionPath, 'themes', fileName);
@@ -78,6 +90,7 @@ function applyThemeColorsForMonth(context: vscode.ExtensionContext) {
 }
 
 export function activate(context: vscode.ExtensionContext) {
+    saveOriginalConfigurations();
     const config = vscode.workspace.getConfiguration('editor');
     config.update('fontFamily', 'Space Mono', vscode.ConfigurationTarget.Global)
         .then(() => {
@@ -134,4 +147,28 @@ function getDecorationForMonth() {
     });
 }
 
-export function deactivate() {}
+export function deactivate() {
+    const workbenchConfig = vscode.workspace.getConfiguration('workbench');
+    const editorConfig = vscode.workspace.getConfiguration('editor');
+
+    workbenchConfig.update('colorCustomizations', originalColorCustomizations, vscode.ConfigurationTarget.Global)
+        .then(() => {
+            console.log('Configuración de colorCustomizations restaurada');
+        }, (error) => {
+            console.error('Error al restaurar colorCustomizations:', error);
+        });
+
+    editorConfig.update('tokenColorCustomizations', originalTokenColorCustomizations, vscode.ConfigurationTarget.Global)
+        .then(() => {
+            console.log('Configuración de tokenColorCustomizations restaurada');
+        }, (error) => {
+            console.error('Error al restaurar tokenColorCustomizations:', error);
+        });
+
+    editorConfig.update('fontFamily', originalFontFamily, vscode.ConfigurationTarget.Global)
+        .then(() => {
+            console.log('Tipografía original restaurada');
+        }, (error) => {
+            console.error('Error al restaurar la tipografía:', error);
+        });
+}
