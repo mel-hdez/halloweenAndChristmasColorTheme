@@ -2,7 +2,7 @@
   "name": "mel-theme",
   "displayName": "Halloween and Christmas Color Theme",
   "description": "colors for halloween and christmas",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "Christmasbonus",
   "engines": {
     "vscode": "^1.94.0"
