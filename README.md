@@ -17,15 +17,15 @@
 
 ### Halloween Theme 🎃
 
-![Halloween Theme Screenshot](./src/img/halloweenTheme.png)
+![Halloween Theme Screenshot](https://github.com/mel-hdez/halloweenAndChristmasColorTheme/blob/main/src/img/halloweenTheme.png)
 
 ### Christmas Theme 🎄
 
-![Christmas Theme Screenshot](./src/img/holidayTheme.png)
+![Christmas Theme Screenshot](https://github.com/mel-hdez/halloweenAndChristmasColorTheme/blob/main/src/img/holidayTheme.png)
 
 ### Default Theme 🌷
 
-![Christmas Theme Screenshot](./src/img/defaultTheme.png)
+![Christmas Theme Screenshot](https://github.com/mel-hdez/halloweenAndChristmasColorTheme/blob/main/src/img/defaultTheme.png)
 
 ## 🚀 Getting Started
 
