@@ -19,6 +19,7 @@
     "type": "git",
     "url": "https://github.com/usuario/repo"
   },
+  "icon": "/src/img/icono.png",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
