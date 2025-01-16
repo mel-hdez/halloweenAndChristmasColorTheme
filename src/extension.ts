@@ -50,42 +50,50 @@ function mergeThemeColors(defaultColors: any, customColors: any) {
 function applyThemeColorsForMonth(context: vscode.ExtensionContext) {
     const currentMonth = getCurrentMonth();
 
-    const defaultColors = loadColorsFromFile(context, '../themes/default-colors.json');
+    // Carga de colores predeterminados y personalizados
+    const defaultColors = loadColorsFromFile(context, 'default-colors.json');
     let customColors;
 
-    if (currentMonth === 9) {  // Octubre (Halloween)
-        customColors = loadColorsFromFile(context, '../themes/halloween-colors.json');
-        vscode.window.showInformationMessage('Muajaja, this is halloween, halloween 🎃');
-    } else if (currentMonth === 10 || currentMonth === 11) { 
-        vscode.window.showInformationMessage('Hohoho, Merry Christmas🎄');
-        customColors = loadColorsFromFile(context, '../themes/holiday-colors.json');  
+    if (currentMonth === 9) { // Octubre (Halloween)
+        customColors = loadColorsFromFile(context, 'halloween-colors.json');
+        vscode.window.showInformationMessage('Muajaja, this is Halloween! 🎃');
+    } else if (currentMonth === 10 || currentMonth === 11) { // Noviembre y Diciembre (Navidad)
+        customColors = loadColorsFromFile(context, 'holiday-colors.json');
+        vscode.window.showInformationMessage('Hohoho, Merry Christmas 🎄');
     } else {
         vscode.window.showInformationMessage('Pretty Colors 🌷');
     }
 
+    // Combinación de colores
     const finalColors = mergeThemeColors(defaultColors, customColors);
 
     try {
-        const colorSettings = JSON.parse(JSON.stringify(finalColors.colors));
-        vscode.workspace.getConfiguration('workbench').update('colorCustomizations', { colors: colorSettings }, vscode.ConfigurationTarget.Global)
-            .then(() => {
-                console.log('Colores de fondo aplicados correctamente');
-            }, (error) => {
-                vscode.window.showErrorMessage('Error al aplicar los colores de fondo al editor.');
-                console.error('Error al aplicar los colores:', error);
-            });
+        // Aplicar colores al tema
+        if (finalColors.colors) {
+            vscode.workspace.getConfiguration('workbench')
+                .update('colorCustomizations', finalColors.colors, vscode.ConfigurationTarget.Global)
+                .then(() => {
+                    console.log('Colores de fondo aplicados correctamente.');
+                }, (error) => {
+                    vscode.window.showErrorMessage('Error al aplicar los colores de fondo.');
+                    console.error('Error al aplicar colores de fondo:', error);
+                });
+        }
 
-        const tokenColorSettings = customColors ? customColors.tokenColors : defaultColors.tokenColors;
-        vscode.workspace.getConfiguration('editor').update('tokenColorCustomizations', { textMateRules: tokenColorSettings }, vscode.ConfigurationTarget.Global)
-            .then(() => {
-                console.log('Colores de token aplicados correctamente');
-            }, (error) => {
-                vscode.window.showErrorMessage('Error al aplicar los colores de token al editor.');
-                console.error('Error al aplicar los colores de token:', error);
-            });
+        // Aplicar colores de tokens
+        if (finalColors.tokenColors) {
+            vscode.workspace.getConfiguration('editor')
+                .update('tokenColorCustomizations', { textMateRules: finalColors.tokenColors }, vscode.ConfigurationTarget.Global)
+                .then(() => {
+                    console.log('Colores de token aplicados correctamente.');
+                }, (error) => {
+                    vscode.window.showErrorMessage('Error al aplicar los colores de tokens.');
+                    console.error('Error al aplicar colores de tokens:', error);
+                });
+        }
     } catch (error) {
         vscode.window.showErrorMessage('Error al aplicar los colores. Puede haber una estructura circular.');
-        console.error('Error al aplicar los colores:', error);
+        console.error('Error al aplicar colores:', error);
     }
 }
 
@@ -135,7 +143,7 @@ function getDecorationForMonth() {
     const currentMonth = getCurrentMonth();
     if (currentMonth === 9) {  
         return vscode.window.createTextEditorDecorationType({
-            before: { contentText: '🌷 ', color: '#FFA500' }
+            before: { contentText: '🎃 ', color: '#FFA500' }
         });
     } else if (currentMonth === 10 || currentMonth === 11) {  
         return vscode.window.createTextEditorDecorationType({
